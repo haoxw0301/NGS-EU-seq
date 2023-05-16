@@ -80,7 +80,7 @@ df3 <- melt(df2, id.vars = c("L1", "age", "compartment", "region"),
 ## 根据样本修改列名
 df3$stage <- factor(df3$stage,
     levels = c("rpm_0", "rpm_40", "rpm_80", "rpm_160", "rpm_300", "rpm_asy"),
-    labels = c("0", "40", "80", "160", "300", "asynaptic"),
+    labels = c("0", "40", "80", "160", "300", "asychronous"),
     ordered = TRUE)
 
 
