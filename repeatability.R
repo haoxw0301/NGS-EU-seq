@@ -30,17 +30,18 @@ fc_out <- function(df) {
 df <- read.table("fc_gene.txt", header = TRUE, sep = "\t") ## reads count
 
 df <- fc_out(df)
+## 根据样本名字修改列名
 names(df)[2:ncol(df)] <-
    c("rpm_asy_1", "rpm_asy_2", "rpm_0_1", "rpm_0_2", "rpm_160_2",
    "rpm_300_1", "rpm_300_2", "rpm_40_1", "rpm_40_2", "rpm_80_1", "rpm_80_2")
 
-df_2 <- df[apply(df[, 2:ncol(df)], 1, function(x) sum(x >= 1) > 10), ]
+# df_2 <- df[apply(df[, 2:ncol(df)], 1, function(x) sum(x >= 1) > 10), ] # 10: 样本数 - 1
 
-df_3 <- scale(cor(log2(df_2[, 2:ncol(df)] + 1)))
+# df_3 <- scale(cor(log2(df_2[, 2:ncol(df)] + 1)))
 
-ph <- pheatmap(df_3)
+# ph <- pheatmap(df_3)
 
-save_pheatmap_pdf(ph, "cor.pdf")
+# save_pheatmap_pdf(ph, "cor.pdf")
 
 ## calculate the RPM ----
 rpm <- function(df, total_rc){
