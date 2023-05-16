@@ -5,6 +5,8 @@
 this program is used to map the reads to the reference genome and get the uniq reads.
 
 ```bash
+mkdir hisat2
+mkdir hisat2_ERCC
 sh 01mapping_R2.sh
 ```
 
@@ -15,6 +17,8 @@ sbatch 02fc.sh
 ```
 
 ## 3. calculate the total reads count with samtools
+
+total_rc.sh  分别保存到hisat2 和 hisat2_ERCC目录下
 
 ```bash
 cd hista2
